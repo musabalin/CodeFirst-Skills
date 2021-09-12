@@ -1,0 +1,26 @@
+﻿@using CodeFirstEntity_Skills_.Models.Classes
+@model List<SKILLS>
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_LayoutNav.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Skill</th>
+        <th>Value</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Description</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+
+
+
+</table>
