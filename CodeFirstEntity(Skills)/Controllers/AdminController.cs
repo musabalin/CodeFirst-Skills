@@ -32,5 +32,27 @@ namespace CodeFirstEntity_Skills_.Controllers
 
             return View();
         }
+        public ActionResult DeleteSkill(int id)
+        {
+            var result = c.Skills.Find(id);
+            c.Skills.Remove(result);
+            c.SaveChanges();
+            return RedirectToAction("Index", "Admin");
+        }
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            var result = c.Skills.Find(id);
+            return View("Update", result);
+        }
+      [HttpPost]
+        public ActionResult Update(SKILLS s)
+        {
+            var result = c.Skills.Find(s.ID);
+            result.Description = s.Description;
+            result.Value = s.Value;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
