@@ -30,7 +30,7 @@ namespace CodeFirstEntity_Skills_.Controllers
             c.Skills.Add(s);
             c.SaveChanges();         
 
-            return View();
+            return RedirectToAction("Index");
         }
         public ActionResult DeleteSkill(int id)
         {
